@@ -41,7 +41,7 @@ function SearchBarComponent({
           type="text"
           value={value}
           onChange={onChange}
-          placeholder="Filter photos by author name (e.g. Alejandro, Paul)..."
+          placeholder="Filter photos by author name (e.g. Alex, Sarah, David)..."
           className="w-full pl-12 pr-28 py-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 text-slate-100 placeholder-slate-500 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all shadow-lg shadow-black/20 backdrop-blur-md"
           autoComplete="off"
         />
