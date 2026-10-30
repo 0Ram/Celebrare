@@ -124,7 +124,7 @@ Use this step-by-step script for your 5-minute video recording:
    - Resize window to tablet width (~768px) to show 2 columns
    - Resize to mobile width (<640px) to show 1 column
 4. Test the **Search Bar**:
-   - Type an author's name (e.g. `Alejandro` or `Paul`).
+   - Type an author's name (e.g. `Sarah` or `Alex`).
    - Point out that filtering happens instantly in real-time without any API calls or page reload.
    - Click the `x` clear button to restore the list.
 5. Test **Favourites**:
