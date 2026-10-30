@@ -3,45 +3,44 @@ import { useState, useEffect, useCallback } from 'react';
 const PICSUM_API_URL = 'https://picsum.photos/v2/list?limit=30';
 
 /**
- * List of clean, distinct, easy-to-pronounce author names.
+ * 30 Authentic Indian / Telugu author names.
  *
  * Why this is used:
- * The raw Picsum API dataset contains many duplicate and complex author names
- * (e.g. the first 10+ photos are all by "Alejandro Escamilla").
- * Mapping unique, friendly names ensures each photo has a distinct author,
- * making real-time search filtering intuitive and effortless to demonstrate in the video.
+ * The raw Picsum API dataset contains duplicate names (the first 10+ photos are all by "Alejandro Escamilla").
+ * Mapping unique, well-known Telugu and Indian names makes the author names easy to read,
+ * pronounce, and demonstrate during the video presentation.
  */
-const FRIENDLY_AUTHOR_NAMES = [
-  'Alex Rivera',
-  'David Miller',
-  'Sarah Connor',
-  'John Smith',
-  'Emma Watson',
-  'Michael Scott',
-  'Sophia Taylor',
-  'James Wilson',
-  'Olivia Davis',
-  'Daniel Brown',
-  'Lucas Martin',
-  'Mia Anderson',
-  'Liam Thomas',
-  'Ava Jackson',
-  'Noah White',
-  'Ethan Harris',
-  'Chloe Clark',
-  'Benjamin Lewis',
-  'Harper Walker',
-  'Leo Hall',
-  'Oliver Allen',
-  'Emily Young',
-  'Lucas Wright',
-  'Ella King',
-  'Henry Scott',
-  'Grace Green',
-  'Jack Adams',
-  'Lily Baker',
-  'Samuel Nelson',
-  'Zoe Carter',
+const TELUGU_AUTHOR_NAMES = [
+  'Ram Charan',
+  'Sai Kumar',
+  'Ravi Teja',
+  'Mahesh Babu',
+  'Prabhas Raju',
+  'Allu Arjun',
+  'Kalyan Kumar',
+  'Vijay Varma',
+  'Tarun Reddy',
+  'Nagarjuna Rao',
+  'Venkatesh Daggubati',
+  'Samantha Ruth',
+  'Sai Pallavi',
+  'Keerthy Suresh',
+  'Rashmika Mandanna',
+  'Anushka Shetty',
+  'Pooja Hegde',
+  'Sreeleela Reddy',
+  'Nani Ghanta',
+  'Chiranjeevi Konidela',
+  'Brahmanandam Kanneganti',
+  'Vennela Kishore',
+  'Priyadarshi Pulikonda',
+  'Sunil Varma',
+  'Jagapathi Babu',
+  'Rajamouli Koduri',
+  'Trivikram Srinivas',
+  'Sukumar Bandreddi',
+  'Balakrishna Nandamuri',
+  'Jr NTR Taraka',
 ];
 
 /**
@@ -51,7 +50,7 @@ const FRIENDLY_AUTHOR_NAMES = [
  * Separates data fetching concerns from UI components.
  *
  * Returns:
- * - photos: Array of 30 photo objects from Picsum API (with clean author attributions)
+ * - photos: Array of 30 photo objects from Picsum API (with Telugu author names)
  * - loading: Boolean indicating network fetch status
  * - error: String error message or null
  * - refetch: Trigger function to retry on failure
@@ -91,10 +90,10 @@ export function useFetchPhotos() {
           throw new Error('Invalid data format received from Picsum API');
         }
 
-        // Map friendly distinct author names for clean search filtering
+        // Map authentic Telugu / Indian author names
         const normalizedData = data.map((photo, index) => ({
           ...photo,
-          author: FRIENDLY_AUTHOR_NAMES[index] || photo.author || 'Unknown Artist',
+          author: TELUGU_AUTHOR_NAMES[index] || photo.author || 'Unknown Artist',
         }));
 
         if (isMounted) {
